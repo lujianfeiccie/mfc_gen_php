@@ -8,6 +8,10 @@
 #include "afxdialogex.h"
 #include "IGenFile.h"
 #include "GenLoginFile.h"
+#include "GenLoginFileHtml.h"
+#include "GenSql.h"
+#include "GenGlobalConfigFile.h"
+#include "GenConfigFile.h"
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -110,9 +114,11 @@ BOOL Cgen_php_codeDlg::OnInitDialog()
 	TCHAR szPath[MAX_PATH];
 	SHGetSpecialFolderPath(NULL,szPath,CSIDL_DESKTOP,0);
 	CString filename;
-	filename.Format(L"%s\\LoginAction.class.php",szPath);
-	
-	IGenFile *file = new GenLoginFile(filename);
+	//filename.Format(L"%s\\LoginAction.class.php",szPath);
+	//filename.Format(L"%s\\index.html",szPath);
+	//filename.Format(L"%s\\db.sql",szPath);
+	filename.Format(L"%s\\config.php",szPath);
+	IGenFile *file = new GenConfigFile(filename);
 	file->doGenFile();
 	delete file;
 	//LOGExt(L"nimei=%d",12);

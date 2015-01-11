@@ -51,6 +51,18 @@
     <ClInclude Include="GenLoginFile.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="GenLoginFileHtml.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GenSql.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GenGlobalConfigFile.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GenConfigFile.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="gen_php_code.cpp">
@@ -72,6 +84,18 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="GenLoginFile.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GenLoginFileHtml.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GenSql.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GenGlobalConfigFile.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GenConfigFile.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -100,7 +100,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DBOperation.h" />
+    <ClInclude Include="GenConfigFile.h" />
+    <ClInclude Include="GenGlobalConfigFile.h" />
     <ClInclude Include="GenLoginFile.h" />
+    <ClInclude Include="GenLoginFileHtml.h" />
+    <ClInclude Include="GenSql.h" />
     <ClInclude Include="gen_php_code.h" />
     <ClInclude Include="gen_php_codeDlg.h" />
     <ClInclude Include="IGenFile.h" />
@@ -111,7 +115,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DBOperation.cpp" />
+    <ClCompile Include="GenConfigFile.cpp" />
+    <ClCompile Include="GenGlobalConfigFile.cpp" />
     <ClCompile Include="GenLoginFile.cpp" />
+    <ClCompile Include="GenLoginFileHtml.cpp" />
+    <ClCompile Include="GenSql.cpp" />
     <ClCompile Include="gen_php_code.cpp" />
     <ClCompile Include="gen_php_codeDlg.cpp" />
     <ClCompile Include="IGenFile.cpp" />

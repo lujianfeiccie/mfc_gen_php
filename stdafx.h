@@ -38,3 +38,4 @@
 
 #pragma comment(lib,"lib\\libmysql.lib")   //把库文件载入C++项目 
 #include "Util.h"
+#define END L"\n"
