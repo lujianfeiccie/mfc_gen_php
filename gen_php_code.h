@@ -19,7 +19,9 @@ class Cgen_php_codeApp : public CWinApp
 {
 public:
 	Cgen_php_codeApp();
-
+	virtual ~Cgen_php_codeApp();
+	wchar_t *m_tmp_wchar;
+	char *m_tmp_char;
 // ÖØÐ´
 public:
 	virtual BOOL InitInstance();

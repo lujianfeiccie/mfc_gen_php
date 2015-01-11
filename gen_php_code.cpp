@@ -24,8 +24,14 @@ Cgen_php_codeApp::Cgen_php_codeApp()
 {
 	// TODO: 在此处添加构造代码，
 	// 将所有重要的初始化放置在 InitInstance 中
+	m_tmp_wchar = new wchar_t[MAX_PATH];
+	m_tmp_char = new char[MAX_PATH];
 }
-
+Cgen_php_codeApp::~Cgen_php_codeApp()
+{
+	delete []m_tmp_wchar;
+	delete []m_tmp_char;
+}
 
 // 唯一的一个 Cgen_php_codeApp 对象
 

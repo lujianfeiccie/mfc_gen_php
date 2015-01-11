@@ -6,7 +6,8 @@
 #include "gen_php_code.h"
 #include "gen_php_codeDlg.h"
 #include "afxdialogex.h"
-
+#include "IGenFile.h"
+#include "GenLoginFile.h"
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -98,14 +99,23 @@ BOOL Cgen_php_codeDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// 设置小图标
 
 	// TODO: 在此添加额外的初始化代码
-	m_db_operation = new DBOperation;
+	/*m_db_operation = new DBOperation;
 	m_db_operation->m_database_name = L"db_test";
 	m_db_operation->m_username = L"root";
 	m_db_operation->m_password = L"123";
 	m_db_operation->OpenDatabase();
 	m_db_operation->PrintInfo();
 	m_db_operation->CloseDatabase();
+	*/
+	TCHAR szPath[MAX_PATH];
+	SHGetSpecialFolderPath(NULL,szPath,CSIDL_DESKTOP,0);
+	CString filename;
+	filename.Format(L"%s\\LoginAction.class.php",szPath);
 	
+	IGenFile *file = new GenLoginFile(filename);
+	//file->doGenFile();
+	delete file;
+	//LOGExt(L"nimei=%d",12);
 	//	m_db_operation->m_username.GetLength()
 	return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
 }

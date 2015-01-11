@@ -30,13 +30,16 @@ int DBOperation::OpenDatabase(void)
 	int ret=mysql_options(this->m_mysql,MYSQL_SET_CHARSET_NAME,"utf8"); 
 	
 	if(ret==0) 
-		Util::LOG(L"mysql options success"); 
+	{
+		LOGExt(L"mysql options success"); 
+	}
 	else 
-		Util::LOG(L"options failed"); 
-   
-	WCHAR_TO_CHAR(this->m_username,username,20);
-	WCHAR_TO_CHAR(this->m_password,password,20);
-	WCHAR_TO_CHAR(this->m_database_name,database_name,20);
+	{
+		LOGExt(L"options failed"); 
+	}
+	WCHAR_TO_CHAR(this->m_username,username);
+	WCHAR_TO_CHAR(this->m_password,password);
+	WCHAR_TO_CHAR(this->m_database_name,database_name);
 
 	if(mysql_real_connect(this->m_mysql,
 							NULL,
@@ -44,7 +47,7 @@ int DBOperation::OpenDatabase(void)
 							password,
 							database_name,0,NULL,0)) 
 	{ 
-		Util::LOG(L"Database connected"); 
+		LOGExt(L"Database connected"); 
 		status = 1;
 	} 
 	else 
@@ -52,7 +55,7 @@ int DBOperation::OpenDatabase(void)
 		const char* error_code=0; 
 		error_code=mysql_error(this->m_mysql); 
 		
-		Util::LOG(L"Error Code:%s",error_code); 
+		LOGExt(L"Error Code:%s",error_code); 
 		status - 1;
 	} 
 
@@ -76,7 +79,7 @@ void DBOperation::PrintInfo(void)
 	int ret=mysql_real_query(this->m_mysql,sql_cmd_str,sql_cmd.GetLength()); 
     if(ret!=0) 
 	{ 
-		Util::LOG(L"fail to query"); 
+		LOGExt(L"fail to query"); 
 		return;
 	} 
 
@@ -85,7 +88,7 @@ void DBOperation::PrintInfo(void)
 
 	if(res_ptr) 
 	{ 
-		Util::LOG(L"rows number:%ld",(unsigned long)mysql_num_rows(res_ptr));  //行数 
+		LOGExt(L"rows number:%ld",(unsigned long)mysql_num_rows(res_ptr));  //行数 
 	} 
 
    //显示字段名 
@@ -97,7 +100,7 @@ void DBOperation::PrintInfo(void)
 	{ 
     //显示所有字段名
 	Util::charTowchar(fields[ii].name,fields_str,50);
-	Util::LOG(L"%s\t",fields_str); 
+	LOGExt(L"%s\t",fields_str); 
 	} 
 
 ///////////////////////显示每行查询结果
@@ -113,11 +116,11 @@ void DBOperation::PrintInfo(void)
 	   Util::charTowchar(sqlrow[ii],sqlrow_str,50);
 	   if(sqlrow[ii] !=NULL) 
 	   { 
-		 Util::LOG(L"%s\t",sqlrow_str);
+		 LOGExt(L"%s\t",sqlrow_str);
 	   } 
 	   else 
 	   { 
-		 Util::LOG(L"NULL\t"); 
+		 LOGExt(L"NULL\t"); 
 	   } 
 	} 
 	} 

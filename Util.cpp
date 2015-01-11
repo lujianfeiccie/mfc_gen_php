@@ -1,5 +1,7 @@
 #include "StdAfx.h"
 #include "Util.h"
+
+
 #define MY_DEBUG
 Util::Util(void)
 {
@@ -7,10 +9,11 @@ Util::Util(void)
 Util::~Util(void)
 {
 }
-void __cdecl Util::LOG(const TCHAR *format, ...)
+void __cdecl Util::LOG(const TCHAR *filename,const int line,const TCHAR *format, ...)
 {
 #ifdef MY_DEBUG
 	TCHAR buf[4096], *p = buf;
+	memset(buf,0,4096);
 	va_list args;
 	va_start(args, format);
 	int size = sizeof buf/2 - 1;
@@ -24,6 +27,9 @@ void __cdecl Util::LOG(const TCHAR *format, ...)
  	*++p = '\n'; 
  	*++p = '\0'; 
 
+	CString tmp;
+	tmp.Format(L"%s(%d):",filename,line);
+	OutputDebugString(tmp);
 	OutputDebugString(buf);
 #endif
 }
