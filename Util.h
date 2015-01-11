@@ -2,7 +2,7 @@
 #include "gen_php_code.h"
 #define WCHAR_TO_CHAR(wchar,char_str) \
 	char char_str[MAX_PATH];\
-	  Util::wcharTochar(wchar,char_str,MAX_PATH);   
+	  Util::wcharTochar(wchar,char_str,MAX_PATH);    
 
 #define CHAR_TO_WCHAR(char_str,wchar_str) \
 	wchar_t wchar_str[MAX_PATH];\

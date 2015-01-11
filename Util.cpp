@@ -2,7 +2,7 @@
 #include "Util.h"
 
 
-#define MY_DEBUG
+//#define MY_DEBUG
 Util::Util(void)
 {
 }
@@ -11,7 +11,7 @@ Util::~Util(void)
 }
 void __cdecl Util::LOG(const TCHAR *filename,const int line,const TCHAR *format, ...)
 {
-#ifdef MY_DEBUG
+#ifdef _DEBUG
 	TCHAR buf[4096], *p = buf;
 	memset(buf,0,4096);
 	va_list args;

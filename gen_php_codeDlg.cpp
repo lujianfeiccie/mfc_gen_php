@@ -113,7 +113,7 @@ BOOL Cgen_php_codeDlg::OnInitDialog()
 	filename.Format(L"%s\\LoginAction.class.php",szPath);
 	
 	IGenFile *file = new GenLoginFile(filename);
-	//file->doGenFile();
+	file->doGenFile();
 	delete file;
 	//LOGExt(L"nimei=%d",12);
 	//	m_db_operation->m_username.GetLength()
