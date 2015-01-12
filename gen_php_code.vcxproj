@@ -100,6 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DBOperation.h" />
+    <ClInclude Include="GenCommonAction.h" />
     <ClInclude Include="GenConfigFile.h" />
     <ClInclude Include="GenGlobalConfigFile.h" />
     <ClInclude Include="GenLoginFile.h" />
@@ -115,6 +116,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DBOperation.cpp" />
+    <ClCompile Include="GenCommonAction.cpp" />
     <ClCompile Include="GenConfigFile.cpp" />
     <ClCompile Include="GenGlobalConfigFile.cpp" />
     <ClCompile Include="GenLoginFile.cpp" />

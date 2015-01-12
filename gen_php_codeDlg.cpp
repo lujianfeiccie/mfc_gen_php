@@ -12,6 +12,7 @@
 #include "GenSql.h"
 #include "GenGlobalConfigFile.h"
 #include "GenConfigFile.h"
+#include "GenCommonAction.h"
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -117,8 +118,9 @@ BOOL Cgen_php_codeDlg::OnInitDialog()
 	//filename.Format(L"%s\\LoginAction.class.php",szPath);
 	//filename.Format(L"%s\\index.html",szPath);
 	//filename.Format(L"%s\\db.sql",szPath);
-	filename.Format(L"%s\\config.php",szPath);
-	IGenFile *file = new GenConfigFile(filename);
+	//filename.Format(L"%s\\config.php",szPath);
+	filename.Format(L"%s\\CommonAction.class.php",szPath);
+	IGenFile *file = new GenCommonAction(filename);
 	file->doGenFile();
 	delete file;
 	//LOGExt(L"nimei=%d",12);

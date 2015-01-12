@@ -63,6 +63,9 @@
     <ClInclude Include="GenConfigFile.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="GenCommonAction.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="gen_php_code.cpp">
@@ -96,6 +99,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="GenConfigFile.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GenCommonAction.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

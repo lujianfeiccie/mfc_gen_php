@@ -19,6 +19,12 @@ int GenConfigFile::doGenFile() const
 		L"	$arr1=array("END\
 		L"		//'配置项'=>'配置值'"END\
 		L"		'URL_MODEL'	=>	1,//path-info 模式"END\
+		L"		//'SHOW_PAGE_TRACE' =>true,"END\
+		L"		//'SHOW_RUN_TIME' =>true,   //显示运行时间"END\
+		L"		//'SHOW_ADV_TIME' =>true,   //显示详细的运行时间"END\
+		L"		//'SHOW_DB_TIMES'=>true,//显示数据库操作次数"END\
+		L"		//'SHOW_CACHE_TIMES'=>true,//显示缓存操作次数"END\
+		L"		//'SHOW_USE_MEM'=>true,//显示内存开销"END\
 		L"	);"END\
 		END\
 		L"	$arr2=include './config.inc.php';"END\
